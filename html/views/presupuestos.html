@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estructura</title>
+    <link rel="stylesheet" href="./../css/estilos0.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+
+    <style>
+        div {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--MENU LINKS-->
+    <header>
+        <nav class="menu">
+            <img class="img" src="./../assets/images/galeria/logove.png" alt="imagen1">
+            <!-- en los enlaces ponemos activo para que crear estilo para que se quede marcada la pag donde estas -->
+            <div class="lista-content">
+                <ul class="lista">
+                    <li><a href="./../index.html">Inicio</a></li>
+                    <li><a href="./../views/productos.html">Galeria</a></li>
+                    <li><a href="#" class="activo">Presupuestos</a></li>
+                    <li><a href="./../views/contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="images-header">
+            <div class="bienvenido">
+                <h2>Bienvenidos a nuestro mundo</h2>
+                <p>Diseño web y móvil - Big data - Impresión 3D - Redes - Python</p>
+                <div class="bisel-abajo"></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container-s">
+        <form id="formulario" name="formulario" action="../php/procesar.php">
+            <h1>Formulario de Solicitud</h1>
+            <fieldset class="form-control">
+                <legend class="datos">Datos</legend>
+                <div class="Nomb">
+                    <label for="nombre">*Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Escriba su nombre" class="valida" maxlength="15">
+                    <small id="error-message" class="error-messaje">Solo se permiten letras</small>
+                </div>
+                <div class="apell">
+                    <label for="apellidos">*Apellidos:</label>
+                    <input type="text" id="apellidos" name="apellidos" placeholder="Escriba su apellido" class="valida">
+                    <small>Error mensaje</small>
+                </div>
+                <div class="telf">
+                    <label for="telefono">*Teléfono de contacto:</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="Escriba su teléfono" class="valida">
+                    <small>Error mensaje</small>
+                </div>
+                <div class="email">
+                    <label for="email">*Mail:</label>
+                    <input type="text" id="email" name="email" placeholder="Escriba su correo" class="valida">
+                    <small>Error mensaje</small>
+                </div>
+            </fieldset>
+
+            <!-- PLAZO EN MESES -->
+            <fieldset class="form-control1">
+                <legend class="datos">Personalízala tú mismo</legend>
+                <div>
+                    <label for="base">Elija un producto: </label>
+                    <select id="base">
+                        <option value="500">Html básico 500€</option>
+                        <option value="700">Css avanzado 700€</option>
+                        <option value="1000">Javascript avanzado 1000€</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="plazo" for="plazo">Plazo en meses: </label>
+                    <input type="number" min="1" max="3" name="plazo" id="plazo" value="3">
+                </div>
+                <div id="extras">
+                    <label class="galeria1" for="galeria1">Galería</label>
+                    <input type="checkbox" value="600" name="galeria" id="galeria1">
+
+                    <label class="ecom" for="ecom">eCommerce</label>
+                    <input type="checkbox" value="500" name="ecom" id="ecom">
+
+                    <label class="redes" for="redes">Redes sociales</label>
+                    <input type="checkbox" value="300" name="redes" id="redes">
+
+                    <label class="localizador" for="localizador">Localizador</label>
+                    <input type="checkbox" value="200" name="localizador" id="localizador">
+                    <div class="perju">
+                        <label id="total1" for="total">PRESUPUESTO ESTIMADO:</label>
+                        <input id="total" type="text" value="500">
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend class="privacidad1">*Aceptación de Condiciones y envío de presupuesto</legend>
+                <label for="privacidadRadio" class="privacidad">He leído la política de privacidad</label>
+                <input type="radio" id="privacidadRadio" name="privacidad">
+                <input class="colorgris" type="submit" value="Enviar">
+                <input class="colorgris" type="reset" value="Borrar">
+            </fieldset>
+        </form>
+        <div>
+            <h5>Todos los derechos reservados 2027</h5>
+        </div>
+        <script src="./../js/presupuesto.js"></script>
+    </main>
+
+    <!-- footer -->
+    <footer class="footer" id="contacto">
+        <div class="degr-formu"></div>
+        <div class="ejez">
+            <div class="f-container">
+                <nav class="mia">
+                    <a title="Twitter" href="http://www.twitter.com"><img class="fakeimg1" src="./../assets/images/galeria/icontwitter.jpg" alt="imagen1"></a>
+                    <a title="Facebook" href="http://www.facebook.com"><img class="fakeimg3" src="./../assets/images/galeria/face.jpg" alt="imagen1"></a>
+                    <a title="Instagram" href="http://www.instagram.com"><img class="fakeimg2" src="./../assets/images/galeria/insta.jpg" alt="imagen1"></a>
+                </nav>
+                <nav class="mio">
+                    <h5><a href="contacto.html">Dónde estamos</a></h5>
+                    <h6><a href="./aviso.html">Aviso legal</a></h6>
+                </nav>
+                <div class="containerd">
+                    <div class="footer-text">
+                       <p>&copy; MasterD - 2023 / Todos los derechos reservados</p>
+                     </div>
+                   </div>
+                 </div>
+                 </div>
+                 
+                 
+                 </footer> 
+                 </body>
+                 </html>

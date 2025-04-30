@@ -1,0 +1,700 @@
+:root{
+  /* equivalente a etiqueta html*/
+  --colorCorp:#143c54;
+  --black:#252a34;
+  --bluelight:#15a4bc;
+  --white:#eaeaea;
+  --title:35px;
+  --text:19px;
+} 
+*{
+margin:0;
+padding:0;
+box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth;   /* desplazamiento efecto lento hacia una parte de la pag  */
+}
+
+body{
+  font-family:'Red Hat Text',sans-serif;
+  background-color:#fff;
+  /* eliminar scroll abajo horizontal */
+  overflow-x: hidden;
+}
+/* biseles */
+.bisel-abajo{
+  position:absolute;
+  /* queremos poner abajo */
+  bottom:0;
+  left:0;
+  /* efectos sesgado imagen*/
+  border-width:0 0 10vh 100vw;
+  /* arriba, derecha, abajo, izquierda h=altura v=anchura*/
+  border-color: transparent transparent #fff transparent;
+  border-style:solid;
+}
+.bisel-arriba{
+  position:absolute;
+  /* queremos poner abajo */
+  top:0;
+  left:0;
+  /* efectos sesgado imagen*/
+  border-width:10vh 100vw 0 0;
+  /* arriba, derecha, abajo, izquierda h=altura v=anchura*/
+  border-color: #fff transparent transparent transparent;
+  border-style:solid;
+  z-index: 10;
+
+}
+/* Menu navegacion */
+#inicio{
+  position:relative;
+  width:100%;
+}
+.menu{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100px;
+  background-color:#fff;
+  /* como queremos que se coloquen las cajas */
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  /* que no se oculte el menu por insertar imagen */
+ z-index: 9999; 
+}
+/* logo informatica y telecomunicaciones */
+.menu .logo{
+  /* espacio izquierda a derecha */
+  margin-left: 20px;
+}
+.menu.logo h1 a{
+text-decoration: none;
+font-size:var(--title);
+font-weight: 400;
+color:var(--black);
+}
+.menu .lista-content{
+  margin-right: 20px;
+}
+/* aplicamos colores y espacios a enlaces */
+.menu .lista-content ul{
+/* se pone en horizontal */
+display:flex;
+}
+.menu .lista-content ul li{
+  /* quitamos pelota enlace */
+  list-style: none;
+}
+.menu .lista-content ul li a{
+ text-decoration:none; 
+ margin: 0px 10px;
+ /* agrandar enlace */
+ padding: 8px;
+ /* cambiamos el color */
+ color:var(--black);
+ font-size: 16px;
+ border-radius: 24px;
+ transition: 0.3s;
+ 
+}
+.menu .lista-content ul li a:hover{
+/* para que cuando pasemos el raton por encima cambie de color */
+background-color:var(--colorCorp);
+color:#fff;
+}
+/* para que se quede seleccionada la pag de donde te encuentras */
+.menu .lista-content ul li a.activo{
+  background-color:var(--colorCorp);
+  color:#fff;  
+}
+/* imagen header */
+.images-header{
+  /* recolocamos botones */
+  position:relative;
+  /* que nos ocupe toda la pantalla */
+  width:100%;
+  /* que coja altura total */
+  height:100vh;
+  /* COLOCAMOS LA IMAGEN */
+  /* HACEMOS QUE LA IMAGEN SE QUEDE FIJA */
+  background-attachment: fixed;
+  /* que se nos quede centrada */
+  background-position: center;
+/* efecto para que se desplace la imagen y el texto se quede fijo */
+  background-size: cover;
+}
+.images-header .bienvenido{
+  /* posicion y tamaño */
+  position:absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  /* 100% altura pero del padre */
+  height:100%;
+  /* color semi transparente oscurece la foto*/
+  background:rgba(0,0,0,0.6);
+  /* para recolocar las cosas dentro */
+  display:flex;
+  /* justificar contenido al centro */
+  justify-content: center;
+  /* alinear al centro */
+  align-items: center;
+  /* alinear vertical */
+  flex-direction: column;
+  background-image: url(./../assets/images/galeria/nosotros.jpg); 
+
+}
+.images-header .bienvenido h2{
+  font-size: 50px;
+ color:#fff;
+ font-weight:200;
+}
+.images-header .bienvenido p{
+ font-size: 20px;
+ color:#fff;
+ margin-top:20px;
+}
+.images-header .bienvenido > button{
+  width: 170px;
+  height:40px;
+  /* color boton transparente */
+  background-color: var(--colorCorp);
+  border-radius:24px;
+  color:#fff;
+  border:none;
+  margin-top:20px;
+  /* cambiamos cursor de raton mano*/
+    cursor:pointer;
+    /* quitamos linea blanca que sale alrededor del raton */
+    outline:none;
+    /* para que cuando pinchemos se vea un pequeño efecto */
+    transition: 0.5s;
+/* PARA QUE SEA COMPATIBLE CON TODOS LOS NAVEGADORES */
+    text-align:center;
+    font-size:22px;
+  }
+    .nosotros .n-container .n-galeria img{
+      width: calc(30% - 10px);
+      margin: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+.images-header .bienvenido > button:hover{
+  /* para quando pases el raton por encima cambie de color */
+  background-color: var(--bluelight);
+}
+/************************Nosotros***********************/
+.nosotros{
+  width: 100%;
+  margin-top:120px;
+}
+.n-container{
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+/* tamaño fuente de etiqueta html */
+.nosotros .n-container h2{ 
+  font-size: 3rem;
+  /* grosor */
+  font-weight: 400;
+  color:var(--black);
+  text-align: center;
+  margin-top:20px;
+  margin-left:45px;
+}
+.nosotros .n-container p{
+ text-align: center;
+ font-size: 1rem;
+ color:var(--black);
+ /* interlineado */
+ line-height: 35px;
+ margin: 10px 0;
+}
+.nosotros .n-container .n-galeria{
+  width:100%;
+  display:flex;
+  justify-content: center;
+  margin:50px 0;
+  
+}
+
+.nosotros .n-container .n-boton{
+    width: 120px;
+    height:40px;
+    text-align: center;
+    font-size: 1.2em;
+    background-color:var(--colorCorp);
+    color:#fff;
+    border:none;
+    outline: none;
+    /* cuando la altura del boton es de cuarenta al border radius le damos la mitad */
+    border-radius:20px;
+    cursor: pointer;
+    transition: 0.5s;
+    /* centrar boton */
+    margin: 10px auto;
+}
+.nosotros .n-container .n-boton:hover{
+  background-color: var(--bluelight);
+  }
+  /************************Proyectos***********************/
+    .galeria{
+       position: relative; 
+       width:100%; 
+       height: 100%; 
+       background-image: url(../assets/images/pantalla2.jpg); 
+       background-position: center; 
+       background-size: cover; 
+      /* QUE OCUPE TODO EL ESPACIO*/
+       background-attachment:fixed; 
+      /* QUE SE SEPARE 100PX*/ 
+       margin-top:100px; 
+       /* efectos sesgado imagen*/
+       
+      
+  }
+  .galeria .degr-back{
+        /* para añadir position absolute al hijo de galeria tenemos que poner en galeria relative por que si no el hijo se referencia respecto a body
+        tambien es usado para que te deje posicionar los elementos */
+        position:absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* hacer oscura y semitransparente la imagem */
+        background: rgba(0,0,0,0.8);
+  }
+  .galeria .ejez{
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .galeria .p-container{
+    width: 90%;
+    margin: auto;
+    padding-top: 100px;
+  }
+  .galeria .p-container .p-title{
+      border: 2px solid #fff;
+      padding: 10px;
+      text-align: center;
+      width: 50%;
+      margin:auto;
+  }
+  .galeria .p-container .p-title h2{
+    font-size: 2rem;
+    color:#fff;
+  }
+  /* estilo al subrayado (hr) */
+  .galeria .p-container .p-title hr{
+    background-color: #fff;
+    width: 50%;
+    height: 3px;
+    margin: 10px auto;
+  }
+  .galeria .p-container .p-galeria{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* para que cuando se agote espacio horizontal corte y pase al siguiente escalon dejado espacio */
+    flex-wrap: wrap;
+    margin-top: 80px;
+    padding-bottom: 100px;
+  }
+  /* tamaños imagenes */
+  .galeria .p-container .p-galeria img{
+      width: calc(30% - 10px);
+      margin: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      object-fit: cover;
+  }
+ /************************Testimonios***********************/
+ .testimonios{
+    width:100%;
+    margin-top: 100px;
+ }
+ .testimonios .t-title{
+      width: 50%;
+      margin: auto;
+      text-align: center;
+ }
+ /* titulo */
+ .testimonios .t-title h2{
+    font-size: 2rem; 
+    color: var(--black); 
+    margin-bottom:10px;
+
+ }
+/* subrayados */
+ .testimonios .t-title hr{
+    width: 60%;
+    height: 3px;
+    margin: auto;
+    background-color: var(--black);
+ }
+ .testimonios .t-container {
+    width: 90%;
+    margin: 80px auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .testimonios .t-container .card-testimonio{
+      width: 45%;
+      margin: 20px;
+  }
+  .testimonios .t-container .card-testimonio .card-img{
+    /* centrado de imagen display y justify */
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+  }
+  .testimonios .t-container .card-testimonio .card-img img{
+    width: 150px;
+    height: 150px; 
+    /* para que quede como una pelota */
+    border-radius: 50px;
+    /* evitar que la imagen se deforme */
+    object-fit: cover;
+    cursor: pointer;
+  
+  }
+/* ponemos bosdes */
+.testimonios .t-container .card-testimonio .t-text{
+    border:2px solid var(--colorCorp);
+    border-radius: 20px;
+    padding: 20px;
+    /* que cambie el color del borde cuando pasamos el raton por encima */
+    transition: 0.1s;
+}
+.testimonios .t-container .card-testimonio .t-text h3{
+font-size: 25px;
+font-weight: 400;
+ color: var(--colorCorp);
+ margin-top:10px;
+ transition: 0.1s;
+ text-align: center;
+}
+/* color del texto sin pasar el cursor por encima */
+.testimonios .t-container .card-testimonio .t-text p{
+  font-size: 20px;
+  text-align: center;
+  line-height: 40px;
+  color: var(--black);
+}
+/* para que cuando pasemos el raton por encima cambie de color el text */
+.testimonios .t-container .card-testimonio .t-text:hover{
+  border: 2px solid var(--bluelight);
+}
+/* para que cuando pasemos el raton por elncima cambie de color el titulo */
+.testimonios .t-container .card-testimonio .t-text h3:hover{
+  color: var(--bluelight);
+}
+/**********************************contacto*********************************/
+/* contacta con nosotros*/
+.contacto h3{
+  display: flex;
+  text-decoration: underline;
+  position: relative;
+  margin-left: 650px;
+  justify-content: center;
+  font-size:25px;
+  color:black;
+  bottom: 350px;
+}
+/* direccion de versatil */
+.contacto h4{
+  display: flex;
+  text-decoration: underline; 
+  font-size:17px;
+  color:black;
+}
+/* telefono de versatil */
+.contacto1 h4{
+  display: flex;
+  text-decoration: underline;
+  position: relative;
+  margin-left: 250px;
+  justify-content: center;
+  font-size:17px;
+  color:black;
+  bottom: 330px;
+}
+/* horario de apertura */
+.contacto2 h4{
+  display: flex;
+  text-decoration: underline;
+  position: relative;
+  margin-left: 700px;
+  justify-content: center;
+  font-size:17px;
+  color:black;
+  bottom: 370px;
+}
+/* dias apertura */
+.contacto3 h4{
+  display: flex;
+  text-decoration: underline;
+  position: relative;
+  margin-left: 1150px;
+  justify-content: center;
+  font-size:17px;
+  color:black;
+  bottom: 409px;
+}
+/* telf */
+.contacto1 .p1{
+  display: flex;
+  text-decoration: none;
+  position: relative;
+  margin-left: 250px;
+  justify-content: center;
+  font-size:17px;
+  color:black;
+  bottom: 330px;
+}
+/* horario */
+.contacto2 .p2{
+  display: flex;
+  text-decoration: none;
+  position: relative;
+  margin-left: 700px;
+  justify-content: center;
+  font-size:17px;
+  color:black;
+  bottom: 367px;
+}
+/* dias apertura */
+.contacto3 .p3{
+  display: flex;
+  text-decoration: none;
+  position: relative;
+  margin-left: 1150px;
+  justify-content: center;
+  font-size:17px;
+  color:black;
+  bottom: 406px;
+}
+
+ /************************Formulario de contacto***********************/
+ .footer{
+  position: relative;
+  width: 100%;
+  height :100%;
+  background-image: url(./../assets/images/galeria/pantalla3.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+ }
+ /* capa tranparente */
+ .footer .degr-formu{
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        background-color: rgba(0,0,0,0.6);
+ }
+ .footer .ejez{
+      position: relative;
+      width:100%;
+      height:100%;
+}
+.footer .f-container{
+      padding-top: 100px;
+      width:90%;
+      margin:auto;
+      padding-bottom: 100px;
+
+}
+.footer .ejez .f-container .f-title{
+      width: 50%;
+      margin: auto;
+      border: 2px solid #fff;
+      padding: 15px;
+}
+.footer .ejez .f-container .f-title h2{
+      font-size: 2rem;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 5px;
+}
+.footer .ejez .f-container .f-title hr{
+      height:2px;
+      background-color :#fff;
+      width: 80%;
+      margin: auto;
+}
+.footer .ejez .f-container .formulario{
+      width: 80%;
+      margin: 50px auto;
+      background-color:#fff;
+      border-radius: 50px;
+      border: 1.5px solid var(--colorCorp);
+      padding: 30px;
+}
+.footer .ejez .f-container .formulario #formulario{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+}
+.footer .ejez .f-container .formulario #formulario label{
+      font-size: 20px;
+      text-align: center;
+      color: var(--black);
+      margin: 30px 0px 10px 0px;
+}
+.footer .ejez .f-container .formulario #formulario input{
+      width: 90%;
+      height: 40px;
+      margin: auto;
+      border-radius: 5px;
+      border: 1.5px solid var(--colorCorp);
+      text-align: center;
+      font-size: 18px;
+      color:var(--black);
+}
+.footer .ejez .f-container .formulario #formulario textarea{
+      width: 90%;
+      height: 200px;
+      margin: auto;
+      border-radius: 5px;
+      border: 1.5px solid var(--colorCorp);
+      text-align: center;
+      font-size: 15px;
+      color:var(--black); 
+}
+.footer .ejez .f-container .formulario #formulario .enviar{
+  width:120px;
+  height: 40px;
+  margin: 15px auto;
+  text-align: center;
+  background-color: var(--colorCorp);
+  font-size: 20px;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.footer .ejez .f-container .formulario #formulario .enviar:hover{
+  background-color: var(--bluelight);
+  transition: 0.5s;
+}
+
+.footer .ejez .f-container .formulario #formulario p{
+ font-size: 20px;
+ color:var(--black); 
+ line-height: 35px;
+}
+.footer .ejez .f-container .footer-text{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background-color: var(0 0 0 0.8);
+  border-top: 2px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer .ejez .f-container .footer-text p{
+  text-align:center;
+  color:#fff;
+  font-size: 20px;
+}
+.footer .mia .fakeimg1  {
+  width:40px;
+  height: 40px;
+  margin: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  object-fit: cover;
+}
+.footer .mia .fakeimg2  {
+  width:40px;
+  height: 40px;
+  margin: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  object-fit: cover;
+}
+.footer .mia .fakeimg3  {
+  width:40px;
+  height: 40px;
+  margin: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  object-fit: cover;
+}
+
+.footer .mio h5 a{
+  position: absolute;
+  margin-left: 600px;
+  justify-content: center;
+  font-size:15px;
+  color: white;
+  bottom: 60px;
+}
+.footer .mio h6 a{
+  position: absolute;
+  margin-left: 615px;
+  justify-content: center;
+  font-size:15px;
+  color: white;
+  bottom: 30px;
+}
+.footer .mio h6 a:hover{
+  color: var(--bluelight);
+}
+.footer .mio h5 a:hover{
+  color: var(--bluelight);
+}
+.formulario .check{
+
+      display:inline-flex;
+      flex-direction: row;
+      position:absolute;
+      top:860px;
+      right:815px;
+      border-top: 1px solid black;
+      border-radius: 5px;
+      max-width: 15px;
+      border-bottom: 10px;
+      
+}
+
+
+
+.enlace1{
+  list-style: none;
+  color:black;
+  display:inline-flex;
+  align-items: center;
+  right: 1005px;
+  top: 1050px;
+  font-size: 0.9em;
+  cursor: pointer;
+
+ 
+}
+.text1{
+  list-style: none;
+  display:inline-flex;
+  flex-direction: row;
+  align-items: center;
+  right: 1005px;
+  top: 1050px;
+  font-size:0.9em;
+  cursor: pointer;
+
+} 

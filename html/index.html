@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estructura</title>
+    <link rel="stylesheet" href="./css/estilos0.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <!-- ICONOS -->
+
+    <!-- MENU LINKS -->
+
+    <style>
+        h2 {
+            font-weight: bold;
+        }
+
+        p {
+            font-family: arial black;
+            color: black;
+        }
+
+        span {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body class="enlaceN" onload="cargarXML()">
+    <img class="img" src="./assets/XML/noticias.xml" alt="imagen1">
+    
+    
+ <!-- cargamos noticias -->
+    <script>
+        function cargarXML() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    mostrarNoticias(this);
+                }
+            };
+            xhttp.open("GET", "./noticias.xml", true);
+            xhttp.send();
+        }
+
+        function mostrarNoticias(xml) {
+            var xmlDoc = xml.responseXML;
+            var noticias = xmlDoc.getElementsByTagName("noticia");
+            var contenidoHTML = "";
+
+            for (var i = 0; i < noticias.length; i++) {
+                var titulo = noticias[i].getElementsByTagName("titulo")[0].childNodes[0].nodeValue;
+                var descripcion = noticias[i].getElementsByTagName("descripcion")[0].childNodes[0].nodeValue;
+                var fecha = noticias[i].getElementsByTagName("fecha")[0].childNodes[0].nodeValue;
+
+                contenidoHTML += "<div>";
+                contenidoHTML += "<h2><strong>" + titulo + "</strong></h2>";
+                contenidoHTML += "<p>" + descripcion + "</p>";
+                contenidoHTML += "<span>" + fecha + "</span>";
+                contenidoHTML += "</div>";
+            }
+
+            document.getElementById("noticias-container").innerHTML = contenidoHTML;
+        }
+    </script>
+          <header>
+            <!-- icon img cabecera -->
+            
+          <nav class="menu">
+           <img id="im" class="img" src="./assets/images/galeria/logove.png" alt="imagen1">
+         
+           <!-- en los enlaces ponemos activo para que crear estilo para que se quede marcada la pag donde estas -->
+           <div class="lista-content">
+             <ul class="lista">
+               <li><a href="#" class="activo">Inicio</a></li>
+               <li><a href="./views/productos.html">Galeria</a></li>
+               <li><a href="./views/presupuestos.html">Presupuestos</a></li>
+               <li><a href="./views/contacto.html">Contacto</a></li>
+ 
+             </ul>
+           </div>
+         </nav>
+  <!--titulo -->
+         <div class="images-header">
+           <div class="bienvenido">
+             <h2>Bienvenidos a nuestro mundo</h2>
+             <p>Diseño web y movil - Big data - Impresion 3D - Redes - Python </p>
+             
+           <div class="bisel-abajo"></div>
+         </div>
+         </div>
+            
+       </header>
+       <!-- Cargamos noticias -->
+         <div class="enlaceN" onload="cargarXML()">
+         <h1><a href="./assets/XML/noticias.xml" target="_blank">Lista de Noticias</a></h1>
+         <p class="noticias">-Aqui tenemos las noticias relacionadas con la tecnologia, esperamos que las disfrutes.  </p>
+         </div>
+         <div id="noticias-container"></div>  
+      
+ 
+     
+ <!-- secciones -->
+ <section class="nosotros" id="quiensomos"> 
+ 
+   <div class= "n-container">
+     <h2>Quienes somos</h2>
+     <p class="one">En La Versatil  llevamos más de 20 años realizando sitios web para empresas de todo tipo, Pymes y grandes corporaciones, apostando no sólo por un diseño web actual y adaptado a todo tipo de dispositivos, sino que también agregando un componente esencial para el éxito: la visión de negocio. Cabe plantearnos primera qué queremos conseguir con la web para definir cómo debe ser, y no plantearlo al revés, como sucede a menudo.
+ 
+       En muchas ocasiones, el diseño web para empresas no cuenta con un planteamiento estratégico inicial que siente las bases de la comunicación, aspecto visual o estructura del sitio web. Después de publicar una web, el empresario se da cuenta de que no está obteniendo los resultados esperados.
+       
+       Respetar la imagen corporativa, ir de la mano de los objetivos de negocio o realizar un estudio de mercado previo son sólo algunos de los aspectos que tenemos en cuenta en La Teva Web en el desarrollo de nuestras webs para empresas.
+       
+       La página web debe representar perfectamente a la marca, su identidad y esencia. No basta con tener una web de plantilla compartida con cientos de empresas, e insertarle nuestro logotipo. Los elementos que definan la marca, como el logo, los colores corporativos o la familia de fuentes que concorde, deben definir la columna vertebral del diseño web y experiencia de usuario. 
+     </p>
+     
+ 
+   <div class="fotos1">
+   </div>
+   </div>
+ </section>
+ <section class="nosotros3" id="quiensomos3"> 
+   <div class= "n-container">
+     <h2> Desarrollo web en Valencia</h2>
+     <p class="two">Diseñamos y desarrollamos webs con CMS para el sitio web de cada cliente. Nos enorgullece poder prestar un servicio totalmente orientado y adaptado a las necesidades y objetivos de cada cliente.
+ 
+       Es por ellos que, en nuestra empresa de desarrollo web en Valencia, cada diseño web está personalizado para transmitir la filosofía de la empresa, y la programación web se ocupa de que la estructura de la página web está totalmente orientada a la consecución de objetivos.
+       
+       Estamos especializados en desarrollo a medida en WordPress, minimizando el uso de plugins de terceros y utilizando el editor visual nativo Gutenberg con su sistema de bloques, lo cual nos permite entregar webs optimizadas solo con el código necesario para las funcionalidades de cada proyecto.
+     </p>
+     
+ 
+   <div class="fotos3">
+   </div>
+   </div>
+ </section>
+ <section class="nosotros1" id="quiensomos1"> 
+   <div class= "n-container">
+     <h2>¿Qué tipo de webs para empresas desarrollamos?</h2>
+ 
+     <p class="three"><strong>- Webs corporativas:</strong> para dar salida a la información relacionada con las empresas y sus servicios, y captar nuevos clientes a través de formularios de contacto o llamadas.
+       
+       <br><strong>- Catálogos online:</strong> disponibilidad en línea de la cartera de productos o servicios y toda la documentación relacionada.
+       
+       <br><strong>-Tiendas online:</strong> venta de productos por Internet, contando con múltiples sistemas de pago, formas de envío y otras funcionalidades propias de los e-commerce.
+       
+       <br><strong>-Intranets:</strong> creación de un espacio específico para los trabajadores, proveedores o colaboradores de la empresa.
+       
+       <br><strong>-Microsites y landings:</strong> desarrollo de páginas web independientes, o incorporación de páginas a un sitio web existente con un objetivo concreto. 
+     </p>
+     
+ 
+   <div class="fotos2">
+   </div>
+   </div>
+ </section>
+ <section class="nosotros2" id="quiensomos2"> 
+   <div class= "n-container">
+     <h2>Páginas web para empresas</h2>
+     <p class="four">Contar con una página web ya no es sólo una opción para una empresa: con el auge del acceso a Internet y la popularización de los smartphones entre la población española, se ha convertido en algo necesario para asegurar su presencia on-line y, prácticamente, su supervivencia.
+ 
+       Existen varios escenarios en los que una empresa puede plantearse crear un sitio web: desde un pequeño negocio local que quiere atraer nuevos clientes en su radio de actuación, hasta grandes empresas de alcance internacional que ofrecen la posibilidad de comprar sus productos on-line. 
+     </p>
+ 
+   <div class="fotos3">
+   </div>
+   </div>
+ </section>
+
+ 
+ 
+ <!-- footer -->
+     
+ <footer class="footer" id="contacto">
+   <div class="degr-formu"></div>
+   <div class="ejez">
+   <div class="f-container">+
+
+     <!-- iconos footer -->
+     <nav class="mia">
+       <a title="Twitter" href="http://www.twitter.com"><img class="fakeimg1" src="./assets/images/galeria/icontwitter.jpg" alt="imagen1"></a>
+       <a title="Facebook" href="http://www.facebook.com"><img class="fakeimg3" src="./assets/images/galeria/face.jpg" alt="imagen1"></a>
+       <a title="Instagram" href="http://www.instagram.com"><img class="fakeimg2" src="./assets/images/galeria/insta.jpg" alt="imagen1"></a>
+     </nav>  
+      <!-- enlaces footer -->
+     <nav class="mio">
+       <h5><a href="./views/contacto.html">Donde estamos</a></h5>
+       <h6><a href="./views/aviso.html">Aviso legal</a></h6>
+     </nav>
+     <div class="containerd">
+    <div class="footer-text">
+       <p>&copy; MasterD - 2023 / Todos los derechos reservados
+                          
+       </p>
+     </div>
+   </div>
+ </div>
+ </div>
+ 
+ 
+ </footer> 
+ </body>
+ </html>
